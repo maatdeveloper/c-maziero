@@ -4,7 +4,7 @@
 struct pessoa
 {
     char nome[100];
-    unsigned short idade;
+    unsigned short int idade;
     float altura;
 };
 
