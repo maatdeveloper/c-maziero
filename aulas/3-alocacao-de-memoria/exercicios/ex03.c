@@ -1,4 +1,5 @@
 #include <stdio.h>
+// ex 3 - ponteiros
 
 int main() {
     char palavra[100];

@@ -8,8 +8,8 @@ int main() {
     num *= 12; // * para multiplicacao, *= para atribuicao
     num /= 4;  // / para divisao, /= para atribuicao
     num = num % 3; // % resto da divisao inteira
-    num++; //mais 1
-    num--; //menos 1
+    num++; // mais 1
+    num--; // menos 1
 
     // && AND || OR ! NOT
     printf("%d\n", num >= 10 && num >= 12); // maior igual
@@ -26,9 +26,13 @@ int main() {
     printf("%d\n", a | b);  // OR binario
     printf("%d\n", a ^ b);  // XOR binario
     printf("%d\n", ~a);     // complemento de 1
-    printf("%d\n", a << 2); //Desloca a ESQUERDA n bits
-    printf("%d\n", a >> 2); //Desloca a DIREITA n bits
+    printf("%d\n", a << 2); // Desloca a ESQUERDA n bits
+    printf("%d\n", a >> 2); // Desloca a DIREITA n bits
 
-    //Tem BEM mais
+    int *ptr = &num; // * declara um ponteiro, & o endereco de uma variavel
+    int op_ter = num > 0 ? 1 : 0; // ? operador ternario, vem apos uma condicao
+                                  // se verdadeira, considera antes do ':', se falsa, depois
+    printf("%d\n", sizeof num); // Tamanho da variavel em bytes
+
     return 0;
 }

@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <string.h>
+// ex 3 -  i/o padrao
 
 int main() {
     char nan = getchar();
     
-    for (int i=0; i<strlen(&nan); i++) {
+    for (int i=0; i < sizeof nan; i++) {
         switch (nan)
         {
             case 32:
@@ -92,6 +93,7 @@ int main() {
                 break;
         }
     }
-    
+    puts("\n");
+
     return 0;
 }

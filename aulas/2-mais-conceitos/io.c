@@ -5,9 +5,9 @@ int main() {
     char letra;
 
     printf("Sai no terminal\n"); //Saída de dados
-    scanf("%d", &alala); //Entrada de dados (usamos um ponteiro '&' para apontar no endereço em que esta alala)
+    scanf("%d", &alala); //Entrada de dados (usamos '&' para escrever no endereço em que esta alala)
     letra = getchar(); //Entrada de dados tipo char
-    putchar('c'); //Saida de dados tipo char (???)
+    putchar(letra); //Saida de dados tipo char
 
     return 0;
 }

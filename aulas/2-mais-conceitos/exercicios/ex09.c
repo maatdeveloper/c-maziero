@@ -1,8 +1,9 @@
 #include <stdio.h>
+// ex 5 -  vetores
 
 #define SIZE 5
 
-void printarrey(int arr[]);
+void printa_arrey(int arr[]);
 void selectionsort(int arr[], int menor);
 int menor_indice(int arr[]);
 
@@ -14,7 +15,7 @@ int main()
         printf("Digite um numero: ");
         scanf("%d", &arr[i]);
     }
-    printarrey(arr);
+    print_arrey(arr);
 
     selectionsort(arr, menor_indice(arr));
 
@@ -57,10 +58,10 @@ void selectionsort(int arr[], int menor)
         arr[imenor] = aux;
     }
 
-    printarrey(arr);
+    print_arrey(arr);
 }
 
-void printarrey(int arr[])
+void print_arrey(int arr[])
 {
     for (int i=0; i<SIZE; i++)
     {

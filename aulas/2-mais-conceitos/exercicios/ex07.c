@@ -1,6 +1,7 @@
 #include <stdio.h>
+// ex 3 -  vetores
 
-void printarrey();
+void print_arrey();
 int main() {
     int arrey[] = {6, 3, 7, 2, 5, 4, 1, 0, 8, 9};
     int tam = sizeof(arrey) / sizeof(arrey[0]);
@@ -29,7 +30,7 @@ int main() {
     return 0;
 }
 
-void printarrey(int *arr) {
+void print_arrey(int *arr) {
     int tam = sizeof(arr) / sizeof(arr[0]);
 
     for (int c=0; c<tam; c++) {

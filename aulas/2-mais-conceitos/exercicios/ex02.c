@@ -1,4 +1,5 @@
 #include <stdio.h>
+// ex 2 -  i/o padrao
 
 int main() {
     int n = 0;

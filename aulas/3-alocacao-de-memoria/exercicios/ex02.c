@@ -1,4 +1,5 @@
 #include <stdio.h>
+// ex 2 - ponteiros
 
 #define SIZE 5
 

@@ -1,8 +1,9 @@
 #include <stdio.h>
+// ex 4 -  vetores
 
 #define SIZE 5
 
-void printarrey(int arr[]);
+void print_arrey(int arr[]);
 void bubblesort(int arr[]);
 
 int main()
@@ -11,11 +12,11 @@ int main()
 
     for (int i=0; i<SIZE; i++)
     {
-        printf("DIgite um valor: ");
+        printf("Digite um valor: ");
         scanf("%d", &arr[i]);
     }
 
-    printarrey(arr);
+    print_arrey(arr);
 
     bubblesort(arr);
 
@@ -39,10 +40,10 @@ void bubblesort(int arr[])
         }
     }
 
-    printarrey(arr);
+    print_arrey(arr);
 }
 
-void printarrey(int arr[])
+void print_arrey(int arr[])
 {
     for (int i=0; i<SIZE; i++)
     {

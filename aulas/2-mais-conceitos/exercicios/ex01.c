@@ -1,4 +1,6 @@
 #include <stdio.h>
+// ex 1 -  i/o padrao
+
 
 int main() {
     int input, soma = 0;

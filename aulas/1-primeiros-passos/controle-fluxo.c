@@ -36,12 +36,12 @@ void switche() {
 
     switch (letra)
     {
-    case 'C':
-        printf("%s programming\n", letra);
-        break;
-    default:
-        printf("%s sla kk\n", letra);
-        break;
+        case 'C':
+            printf("%s programming\n", letra);
+            break;
+        default:
+            printf("%s sla kk\n", letra);
+            break;
     }
     printf("%s\n", letra);
 }
@@ -54,19 +54,23 @@ void whiler() {
         printf("%d ", num);
         num++;
     }
+
     printf("\nDo While\n");
     do {
         num--;
         printf("%d ", num);
     } while (num > 0);
+
     printf("\n");
 }
 
 void forin() {
     printf("For\n");
+
     for (int i=0; i < 10; i++) {
         printf("%d ", i);
     }
+    
     printf("\n");
 }
 

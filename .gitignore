@@ -1,3 +1,16 @@
+# ignora arquivos compilados
 *.exe
 *.out
+
+# ignora configuracoes vscode
 .vscode
+
+# ignora os arquivos da aula 5
+*.txt
+*.dat
+
+# ignora as aulas gravadas do professor Maziero
+video-aulas         
+
+# livro Estrutura de Dados (fabiana, patricia, tanisi)
+estruturas-de-dados  

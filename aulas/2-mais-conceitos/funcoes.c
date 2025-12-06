@@ -9,14 +9,10 @@ int subtracao(int a, int b) {
 //protótipo
 long fatorial(int n);
 
-
-
 int main() {
     printf("fatorial: %d\n", fatorial(5));
     return 0;
 }
-
-
 
 long fatorial(int n) {
     if (n <= 1) {

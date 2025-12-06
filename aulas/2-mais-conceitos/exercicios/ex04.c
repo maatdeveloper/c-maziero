@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+// ex 4 -  i/o padrao
 
 int main() {
     float raiz;

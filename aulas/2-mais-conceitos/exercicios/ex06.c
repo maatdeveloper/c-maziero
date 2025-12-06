@@ -1,4 +1,5 @@
 #include <stdio.h>
+// ex 2 -  vetores
 
 int main() {
     int arrey[] = {45, 68, 42, 75, 24};

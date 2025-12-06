@@ -6,6 +6,7 @@
 void escrita();
 void leitura();
 void fim_do_arquivo();
+
 int main() {
     escrita();
     leitura();

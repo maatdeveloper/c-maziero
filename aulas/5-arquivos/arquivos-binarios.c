@@ -7,6 +7,7 @@
 
 void escrita();
 void leitura();
+
 int main(int argc, char *argv[]) {
     escrita();
     leitura();

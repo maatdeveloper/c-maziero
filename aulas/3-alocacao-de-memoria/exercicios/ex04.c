@@ -1,29 +1,36 @@
 #include <stdio.h>
-#include <stdlib.h>
+// ex 4 - ponteiros
 
-int *arrey;
-int tam;
+#define SIZE 50
 
 int main() {
-    printf("Qual deve ser o tamanho do vetor? ");
-    scanf("%d", &tam);
-    
-    arrey = malloc(tam * sizeof(int));
+    char string_1[SIZE], string_2[SIZE], string_concat[SIZE];
+    char *ptr, *ptr_concat;
 
-    if (!arrey) {
-        fprintf(stderr, "falha ao alocar memoria\n");
-        exit(1);
+    scanf("%s %s", string_1, string_2);
+
+    ptr_concat = string_concat;
+    ptr = string_1;
+
+    while (*ptr != '\0') {
+        *ptr_concat = *ptr;
+        ptr_concat++;
+        ptr++;
     }
 
-    for (int i=0; i<tam; i++) {
-        arrey[i] = (i+1)*tam;
-    }
-    for (int i=0; i<tam; i++) {
-        printf("[%d] : %d\n", i, arrey[i]);
+    ptr = string_2;
+    while (*ptr != '\0') {
+        *ptr_concat = *ptr;
+        ptr_concat++;
+        ptr++;
     }
 
-    free(arrey);
-    arrey = NULL;
+    ptr_concat++;
+    *ptr_concat = '\0';
+    ptr = NULL;
+    ptr_concat = NULL;
+
+    printf("Dados de entrada concatenados: %s\n", string_concat);
 
     return 0;
 }

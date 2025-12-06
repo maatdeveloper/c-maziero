@@ -5,7 +5,7 @@ Realizando todos as aulas e projetos do material disponível em: **[c-start](htt
 ```C
 #include <stdio.h>
 
-int main(int argv, char *argc[]) { printf("Hello, C!"); }
+int main(int argc, char *argv[]) { printf("Hello, C!"); }
 ```
 
 ### Oque aprendi

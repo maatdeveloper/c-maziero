@@ -1,104 +1,53 @@
 #include <stdio.h>
+// ex 7 - vetores
 
-#define SIZE 5
-#define MAXH 3
-#define MAXW 3
+#define COL_A 2
+#define LIN_A 3
+#define COL_B 3
+#define LIN_B 2
 
-void printarrey(int arr[], int tam);
-void printmatriz(int arr[][MAXW], int height, int width);
-void learrey(int arr[], int tam);
-void lematriz(int arr[][MAXW], int height, int width);
-void somarrey(int arr1[], int arr2[]);
-void bubblesort(int arr[], int tam);
-void transpormtz(int arr[][MAXW], int height, int width);
+void print_matriz(int mtz[][LIN_A]);
+void multiplicar_matriz(int mtz_a[][LIN_A], int mtz_b[][LIN_B], int mtz_mtp[][LIN_A]);
 
 int main() {
-    //ex1
-    int arr1[SIZE] = {2, 4, 6, 8, 10};
-    int arr2[SIZE] = {2, 4, 6, 8, 10};
-    somarrey(arr1, arr2);
+    int matriz_a[COL_A][LIN_A] = {{2, 2, 2},
+                                  {4, 4, 4}};
 
-    //ex2
-    int arr[SIZE];
-    learrey(arr, SIZE);
-    bubblesort(arr, SIZE);
-    printarrey(arr, SIZE);
+    int matriz_b[COL_B][LIN_B] = {{1, 1},
+                                  {3, 3},
+                                  {5, 5}};
+    int matriz_mult[COL_B][LIN_A];
 
-    //ex3
-    int matrix[MAXH][MAXW];
-    lematriz(matrix, MAXH, MAXW);
-    transpormtz(matrix, MAXH, MAXW);
+    // inicializando matriz_mult
+    for (int i=0; i<COL_B; i++) {
+        for (int j=0; j<LIN_A; j++) {
+            matriz_mult[i][j] = 0;
+        }
+    }
+
+    multiplicar_matriz(matriz_a, matriz_b, matriz_mult);
 
     return 0;
 }
 
-void printarrey(int arr[], int tam) {
-    for (int i=0; i<tam; i++) {
-        printf("%d ", arr[i]);
-    }
-
-    printf("\n");
-}
-
-void printmatriz(int arr[][MAXW], int he, int wi) {
-    for (int i=0; i<he; i++) {
-        for (int j=0; j<wi; j++) {
-            printf("%d ", arr[i][j]);
+void print_matriz(int mtz[][LIN_A]) {
+    for (int i=0; i<COL_B; i++) {
+        for (int j=0; j<LIN_A; j++) {
+            printf("%d ", mtz[i][j]);
         }
+
         printf("\n");
     }
 }
 
-void learrey(int *arr, int tam) {
-    for (int i=0; i<tam; i++) {
-        printf("Digite um numero: ");
-        scanf("%d", &arr[i]);
-    }
-    printf("\n");
-}
-
-void lematriz(int arr[][MAXW], int he, int wi) {
-    for (int i=0; i<MAXH; i++) {
-        for (int j=0; j<MAXW; j++) {
-            printf("Digite um valor: ");
-            scanf("%d", &arr[i][j]);
-        }
-    }
-}
-
-void somarrey(int *arr1, int *arr2) {
-    int arr[SIZE];
-    
-    for (int i=0; i<SIZE; i++) {
-        arr[i] = arr1[i] + arr2[i];
-    }
-
-    printarrey(arr, SIZE);
-}
-
-void bubblesort(int *arr, int tam) {
-    int aux;
-
-    for (int i=0; i<SIZE; i++) {
-        for (int c=0; c<SIZE-1; c++) {
-            if (arr[c] > arr[c+1]) {
-                aux = arr[c];
-                arr[c] = arr[c+1];
-                arr[c+1] = aux;
+void multiplicar_matriz(int mtz_a[][LIN_A], int mtz_b[][LIN_B], int mtz_mtp[][LIN_A]) {
+    for (int i=0; i<COL_B; i++) {
+        for (int j=0; j<LIN_A; j++) {
+            for (int k=0; k<LIN_A; k++) {
+                mtz_mtp[i][j] += mtz_a[i][k] * mtz_b[k][j];
             }
         }
     }
-}
 
-void transpormtz(int arr[][MAXW], int he, int wi) {
-    int mtz[he][wi];
-    int aux;
-
-    for (int j=0; j<wi; j++) {
-        for (int i=0; i<he; i++) {
-            mtz[j][i] = arr[i][j];
-        }
-    }
-
-    printmatriz(mtz, he, wi);
+    print_matriz(mtz_mtp);
 }

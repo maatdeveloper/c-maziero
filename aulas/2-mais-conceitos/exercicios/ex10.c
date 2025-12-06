@@ -1,74 +1,46 @@
 #include <stdio.h>
+// ex 6 - vetores
 
-double quadrado(int num, int exp);
-void troca(int *a, int *b);
-int comparar(int a, int b);
-int maior(int arr[]);
+#define MAX_COL 3
+#define MAX_LIN 3
+
+void print_matriz(int mtz[][MAX_LIN]);
+void transpor_matriz(int mtz[][MAX_LIN], int mtz_t[][MAX_LIN]);
 
 int main() {
-    //ex1
-    double quad = quadrado(2, 5);
-    printf("%f\n", quad);
+    int matriz[MAX_COL][MAX_LIN] = {{1, 2, 3},
+                                    {4, 5, 6},
+                                    {7, 8, 9}};
+    int matriz_transp[MAX_LIN][MAX_COL];
 
-    //ex2
-    int a = 5;
-    int b = 10;
-    troca(&a, &b);
-    printf("a: %d b: %d\n", a, b);
+    printf("Matriz original: \n");
+    print_matriz(matriz);
 
-    //ex3
-    int result = comparar(63, 21);
-    printf("a maior que b? %d\n", result);
-
-    //ex4
-    int vetor[5] = {5, 4, 8, 5, 3};
-    int mai = maior(vetor);
-    printf("maior: %d\n", mai);
+    printf("\n\n");
+    printf("Matriz tranposta: \n");
+    transpor_matriz(matriz, matriz_transp);
 
     return 0;
 }
 
-double quadrado(int num, int exp) {
-    double valor = num * 1.0;
-    if (exp == 0) {
-        return 1.0;
-    }
-    if (num == 0) {
-        return 0.0;
-    }
-    
-    for (int i=1; i<exp; i++) {
-        valor = valor * num;
-    }
+void print_matriz(int mtz[][MAX_LIN]) {
+    for (int i=0; i<MAX_COL; i++) {
 
-    return valor;
+        for (int j=0; j<MAX_LIN; j++) {
+            printf("%d ", mtz[i][j]);
+
+        }
+
+        printf("\n");
+    }
 }
 
-void troca(int *a, int *b) {
-    int aux = *a;
-    *a = *b;
-    *b = aux;
-}
-
-int comparar(int a, int b) {
-    if (a > b) {
-        return 1;
-    }
-    if (a < b) {
-        return -1;
-    }
-
-    return 0;
-}
-
-int maior(int arr[]) {
-    int m = arr[0];
-
-    for (int i=0; i<5; i++) {
-        if (m < arr[i]) {
-            m = arr[i];
+void transpor_matriz(int mtz[][MAX_LIN], int mtz_t[][MAX_LIN]) {
+    for (int i=0; i<MAX_LIN; i++) {
+        for (int j=0; j<MAX_COL; j++) {
+            mtz_t[j][i] = mtz[i][j];
         }
     }
 
-    return m;
+    print_matriz(mtz_t);
 }
