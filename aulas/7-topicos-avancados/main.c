@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 //padrao C ANSI | int main(int argc, char **argv);
 //padrao Apple (MacOS, iOS) | int main(int argc, char **argv, char **envp, char **apple);
 
