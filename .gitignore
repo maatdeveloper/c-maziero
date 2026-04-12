@@ -1,4 +1,6 @@
 # ignora arquivos compilados
+*.o
+*.obj
 *.exe
 *.out
 
