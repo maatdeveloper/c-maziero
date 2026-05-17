@@ -6,6 +6,7 @@
 
 /* project includes */
 #include "lcrandom.h"
+#include "../input/input.h"
 struct lcrandom {
     unsigned long seed;
     unsigned long a;
@@ -37,9 +38,9 @@ void lcrandom_seed (unsigned long s)
 
 void lcrandom_parms (unsigned long A, unsigned long C, unsigned long M)
 {
-    if (A != 0) { lcr.a = A; }
-    if (C != 0) { lcr.c = C; }
-    if (M != 0) { lcr.m = M; }
+    if (A != NO_PARAMS) { lcr.a = A; }
+    if (C != NO_PARAMS) { lcr.c = C; }
+    if (M != NO_PARAMS) { lcr.m = M; }
 }
 
 unsigned long lcrandom_max ()

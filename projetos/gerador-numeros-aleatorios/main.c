@@ -14,8 +14,6 @@
 #include "src/periodo/periodo.h"
 #include "src/input/input.h"
 
-void input_correto();
-
 int main(int argc, char **argv)
 {
     unsigned long seed = 0;

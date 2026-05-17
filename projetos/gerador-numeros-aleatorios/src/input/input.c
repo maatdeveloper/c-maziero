@@ -86,7 +86,7 @@ enum input validar_input(int argc, char **argv)
             }
             
             if (in != ERR) {
-                in = SA;
+                in = SACM;
             }
 
             break;
