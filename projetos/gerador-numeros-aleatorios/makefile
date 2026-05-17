@@ -6,8 +6,9 @@ CC = gcc
 LCRANDOM_F 		:= src/lcrandom/lcrandom.c 		src/lcrandom/lcrandom.h
 HISTOGRAMA_F 	:= src/histograma/histograma.c 	src/histograma/histograma.h
 PERIODO_F		:= src/periodo/periodo.c 		src/periodo/periodo.h
+INPUT_F			:= src/input/input.c			src/input/input.h
 
-all: main.o lcrandom.o histograma.o periodo.o
+all: main.o lcrandom.o histograma.o periodo.o input.o
 	$(CC) -o lcr $^
 
 main.o: main.c
@@ -21,6 +22,10 @@ histograma.o: $(HISTOGRAMA_F)
 
 periodo.o: $(PERIODO_F)
 	$(CC) -c $(CFLAGS) src/periodo/periodo.c
+
+input.o: $(INPUT_F)
+	$(CC) -c $(CFLAGS) src/input/input.c
+
 
 clean:
 	rm -f *.o lcr

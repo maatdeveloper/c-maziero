@@ -4,8 +4,10 @@
  * periodo.c: implementação da biblioteca 'periodo.h'
  */
 
+/* system includes */
 #include <stdlib.h>
-#include <stdbool.h>
+
+/* project includes */
 #include "periodo.h"
 #include "../lcrandom/lcrandom.h"
 
@@ -64,6 +66,19 @@ list_of_random_numbers *search(list_of_random_numbers *l, unsigned long number)
     return aux;
 }
 
+void delete(list_of_random_numbers *l)
+{
+    list_of_random_numbers *aux = l;
+    
+    while (aux != NULL) {
+        l = l->next;
+        free(aux);
+        aux = l;
+    }
+
+    free(aux);
+}
+
 unsigned long achar_periodo(unsigned long seed)
 {
     list_of_random_numbers *list = init();
@@ -84,6 +99,8 @@ unsigned long achar_periodo(unsigned long seed)
         add(list, num);
         periodo++;
     }
+
+    delete(list);
 
     return periodo;
 }

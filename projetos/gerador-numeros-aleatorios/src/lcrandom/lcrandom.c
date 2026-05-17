@@ -4,8 +4,8 @@
  * lcrandom.c: implementação das funções definidas em 'lcrandom.h'
  */
 
+/* project includes */
 #include "lcrandom.h"
-
 struct lcrandom {
     unsigned long seed;
     unsigned long a;
@@ -37,7 +37,9 @@ void lcrandom_seed (unsigned long s)
 
 void lcrandom_parms (unsigned long A, unsigned long C, unsigned long M)
 {
-    lcr.a = A; lcr.c = C; lcr.m = M;
+    if (A != 0) { lcr.a = A; }
+    if (C != 0) { lcr.c = C; }
+    if (M != 0) { lcr.m = M; }
 }
 
 unsigned long lcrandom_max ()
